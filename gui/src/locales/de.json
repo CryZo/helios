@@ -1,0 +1,31 @@
+{
+    "pages": {
+        "dashboard": {
+            "title": "Dashboard"
+        }
+    },
+    "components": {
+        "rooms": {
+            "title": "Räume"
+        },
+        "devices": {
+            "title": "Geräte"
+        },
+        "openClose": {
+            "open": "Öffnen",
+            "close": "Schließen",
+            "stop": "Stop"
+        },
+        "onOff": {
+            "on": "An",
+            "off": "Aus"
+        }
+    },
+    "deviceTypes": {
+        "Lights": "Lampen",
+        "Blinds": "Rolläden",
+        "Heater": "Heizung",
+        "Multimedia": "Multimedia",
+        "Sensors": "Sensoren"
+    }
+}

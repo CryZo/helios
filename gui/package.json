@@ -1,0 +1,38 @@
+{
+  "name": "ohg-gui",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "i18n:report": "vue-cli-service i18n:report --src \"./src/**/*.?(js|vue)\" --locales \"./src/locales/**/*.json\""
+  },
+  "dependencies": {
+    "@headlessui/vue": "^1.1.1",
+    "@mdi/js": "^5.9.55",
+    "@tailwindcss/forms": "^0.3.2",
+    "core-js": "^3.6.5",
+    "mdi-vue": "^3.0.7",
+    "register-service-worker": "^1.7.1",
+    "vue": "^3.0.0",
+    "vue-class-component": "^8.0.0-0",
+    "vue-i18n": "^9.1.6",
+    "vue-router": "^4.0.0-0"
+  },
+  "devDependencies": {
+    "@intlify/vue-i18n-loader": "^2.1.0",
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-pwa": "~4.5.0",
+    "@vue/cli-plugin-router": "~4.5.0",
+    "@vue/cli-plugin-typescript": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/compiler-sfc": "^3.0.0",
+    "autoprefixer": "^9",
+    "postcss": "^7",
+    "sass": "^1.26.5",
+    "sass-loader": "^8.0.2",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat",
+    "typescript": "~4.1.5",
+    "vue-cli-plugin-i18n": "~2.1.0"
+  }
+}

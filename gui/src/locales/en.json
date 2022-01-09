@@ -1,0 +1,31 @@
+{
+    "pages": {
+        "dashboard": {
+            "title": "Dashboard"
+        }
+    },
+    "components": {
+        "rooms": {
+            "title": "Rooms"
+        },
+        "devices": {
+            "title": "Devices"
+        },
+        "openClose": {
+            "open": "Open",
+            "close": "Close",
+            "stop": "Stop"
+        },
+        "onOff": {
+            "on": "On",
+            "off": "Off"
+        }
+    },
+    "deviceTypes": {
+        "Lights": "Lights",
+        "Blinds": "Blinds",
+        "Heater": "Heater",
+        "Multimedia": "Multimedia",
+        "Sensors": "Sensors"
+    }
+}

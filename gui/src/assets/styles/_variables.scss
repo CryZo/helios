@@ -1,0 +1,49 @@
+@use "sass:map";
+
+$theme-colors: getThemeColors();
+
+//Generate theme color variants
+$hover-colors: ();
+@each $name, $color in $theme-colors {
+    $hover-colors: map.set($hover-colors, $name, scale-color($color, $lightness: 10%));
+}
+
+$active-colors: ();
+@each $name, $color in $theme-colors {
+    $active-colors: map.set($active-colors, $name, scale-color($color, $lightness: -20%));
+}
+
+$disabled-colors: ();
+@each $name, $color in $theme-colors {
+    $disabled-colors: map.set($disabled-colors, $name, scale-color($color, $saturation: -40%));
+}
+
+$popup-bg-colors: ();
+@each $name, $color in $theme-colors {
+    $popup-bg-colors: map.set($popup-bg-colors, $name, scale-color($color, $lightness: 90%));
+}
+
+
+// Unfortunatly Tailwindcss has no way to scale colors, so we'll do it here and add them as css variable.
+:root {
+    @each $name, $color in $theme-colors {
+        $steps: 15%;
+
+        --color-#{$name}-50: #{scale-color($color, $lightness: 4.5 * $steps)};
+        $grade: 100;
+        @for $i from 4 through -4 {
+            --color-#{$name}-#{$grade}: #{scale-color($color, $lightness: $i * $steps)};
+
+            $grade: $grade + 100;
+        }
+
+        //Add a triplet variant for base colors
+        --triplet-#{$name}: #{red($color)}, #{green($color)}, #{blue($color)};
+
+        //Add variants
+        --color-#{$name}-hover: #{map.get($hover-colors, $name)};
+        --color-#{$name}-active: #{map.get($active-colors, $name)};
+        --color-#{$name}-disabled: #{map.get($disabled-colors, $name)};
+        --color-#{$name}-popup-bg: #{map.get($popup-bg-colors, $name)};
+    }
+};

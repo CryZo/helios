@@ -1,0 +1,13 @@
+@import "./variables";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.text-shadow-primary {
+    text-shadow: 0 0 2rem map-get($theme-colors, 'primary');
+}
+
+.text-shadow-secondary {
+    text-shadow: 0 0 2rem map-get($theme-colors, 'secondary');
+}
