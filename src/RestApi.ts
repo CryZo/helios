@@ -40,7 +40,7 @@ export default class RestApi {
 		this.app.get('/control/:dev/:status', this.HandleControl.bind(this));
 		this.app.get('/control/room/:id/:devType/:status', this.HandleRoomControl.bind(this));
 
-		this.server = this.app.listen(8081, () => {
+		this.server = this.app.listen(80, () => {
 			let host = this.server.address().address,
 				port = this.server.address().port;
 
