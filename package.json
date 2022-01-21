@@ -1,6 +1,6 @@
 {
-  "name": "helios",
-  "version": "1.0.0",
+  "name": "@cryzo/helios",
+  "version": "1.0.1",
   "description": "",
   "main": "dist/helios.js",
   "types": "dist/index.d.ts",
