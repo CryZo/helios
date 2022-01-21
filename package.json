@@ -7,8 +7,8 @@
   "scripts": {
     "build": "npx gulp buildAll",
     "prepublish": "npx gulp buildAll",
-    "postinstall": "cd gui; yarn; cd ../logo; yarn; cd ../connector; yarn",
-    "cleanUp": "rm -r dist; cd gui; rm -r dist; cd ../logo; rm -r dist tmp; cd ../connector; rm -r dist"
+    "postinstall": "cd gui; yarn; cd ../logo; yarn;",
+    "cleanUp": "rm -r dist; cd gui; rm -r dist; cd ../logo; rm -r dist tmp;"
   },
   "keywords": [],
   "author": "",
