@@ -70,8 +70,9 @@ new MQTTControls(mqtt);
  * 1. Clone your Repo to /src/Automation
  * 2. Copy your dependencies to /node_modules
  */
+const automationPath = path.join(__dirname, 'Automation')
 try {
-	const automation = require("./dist/Automation");
+	const automation = require(automationPath);
 
 	try {
 		console.info('Automation logic found. Launching module.');
@@ -82,5 +83,5 @@ try {
 	}
 }
 catch {
-	console.info('No automation logic was found.');
+	console.info('No automation logic was found at ' + automationPath);
 }
