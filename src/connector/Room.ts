@@ -2,9 +2,9 @@ import { Device } from ".";
 import { DeviceType, Trait } from "./Enums";
 
 export default class Room {
-	Name: string;
-	Floor: number;
-	_id: string;
+	Name!: string;
+	Floor!: number;
+	_id!: string;
 	Devices: Device[] = [];
 
 	GetTraits(): {[devType: string]: Trait[]} {
@@ -33,7 +33,7 @@ export default class Room {
 			let curDev = this.Devices[i];
 
 			if (curDev.Traits.includes(Trait.Temperature)) {
-				if (curDev.IsRoomTemperature)
+				if (curDev.IsRoomTemperature && curDev.Temperature)
 					temps.push(curDev.Temperature);
 			}
 		}
@@ -44,6 +44,9 @@ export default class Room {
 			//}
 			//TODO Implement this, if you have more than one sensor in a room
 		}
+
+
+		return 0;
 	}
 
 	getAverageHumidity(): number {
@@ -52,7 +55,7 @@ export default class Room {
 		for (let i in this.Devices) {
 			let curDev = this.Devices[i];
 
-			if (curDev.Traits.includes(Trait.Humidity)) {
+			if (curDev.Traits.includes(Trait.Humidity) && curDev.Humidity) {
 				temps.push(curDev.Humidity);
 			}
 		}
@@ -63,5 +66,8 @@ export default class Room {
 			//}
 			//TODO Implement this, if you have more than one sensor in a room
 		}
+
+
+		return 0;
 	}
 }

@@ -1,7 +1,7 @@
 export default class Color {
-	Red: number;
-	Green: number;
-	Blue: number;
+	Red: number = 0;
+	Green: number = 0;
+	Blue: number = 0;
 
 	constructor() {
 
