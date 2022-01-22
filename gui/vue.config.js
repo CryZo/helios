@@ -7,13 +7,6 @@ const colors = {
 };
 
 module.exports = {
-    configureWebpack: {
-        resolve: {
-            alias: {
-                '@connector': path.resolve(__dirname, '..', 'src', 'connector')
-            },
-        },
-    },
     css: {
         loaderOptions: {
             sass: {

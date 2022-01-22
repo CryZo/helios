@@ -7,7 +7,7 @@
 </template>
 
 <script lang="ts">
-import { Device, Room } from '@connector';
+import { Device, Room } from 'connector';
 import { Options, Vue } from 'vue-class-component';
 
 @Options({

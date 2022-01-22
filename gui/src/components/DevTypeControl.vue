@@ -24,8 +24,8 @@
 </template>
 
 <script lang="ts">
-import { Room } from '@connector';
-import { DeviceType, Trait } from '@connector/Enums';
+import { Room } from 'connector';
+import { DeviceType, Trait } from 'connector/Enums';
 import { Options, Vue } from 'vue-class-component';
 
 import { Brightness, OnOff, OpenClose, Position, RGB, TemperatureSetting } from '@/components/traits';

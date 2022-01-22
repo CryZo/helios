@@ -38,7 +38,7 @@ import { Options, Vue } from 'vue-class-component';
 })
 export default class Rooms extends Vue {
   private rooms: {[key: string]: {id: string, Name: string, desc: string}[]} = {};
-  private interval: number = 0;
+  private interval!: NodeJS.Timeout;
 
   refresh() {
     Object.keys(this.rooms).forEach(i => delete this.rooms[i]);

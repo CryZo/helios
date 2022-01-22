@@ -1,5 +1,5 @@
-import { IBackendConnection } from "@connector/connection";
-import { Room } from "@connector";
+import { IBackendConnection } from "connector/connection";
+import { Room } from "connector";
 
 declare global {
     interface Window {

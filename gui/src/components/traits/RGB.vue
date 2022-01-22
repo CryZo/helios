@@ -3,7 +3,7 @@
 </template>
 
 <script lang="ts">
-import { Color, Device, Room } from '@connector';
+import { Color, Device, Room } from 'connector';
 import { Options, Vue } from 'vue-class-component';
 
 @Options({
@@ -19,7 +19,7 @@ export default class RGB extends Vue {
 	devType?: string;
 
 	public CurrentColor(): string {
-		if (this.device)
+		if (this.device && this.device.Color)
 			return `#${this.device.Color.GetHexColor()}`;
 		else
 			return '#000000'

@@ -36,8 +36,8 @@
 </template>
 
 <script lang="ts">
-import { Device } from '@connector';
-import { Trait } from '@connector/Enums';
+import { Device } from 'connector';
+import { Trait } from 'connector/Enums';
 import { Options, Vue } from 'vue-class-component';
 
 import { Brightness, Humidity, OnOff, OpenClose, Position, RGB, Temperature, TemperatureSetting } from '@/components/traits';

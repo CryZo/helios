@@ -7,8 +7,8 @@
 </template>
 
 <script lang="ts">
-import { Device, Room } from '@connector';
-import { BlindStatus } from '@connector/Enums';
+import { Device, Room } from 'connector';
+import { BlindStatus } from 'connector/Enums';
 import { Options, Vue } from 'vue-class-component';
 
 @Options({

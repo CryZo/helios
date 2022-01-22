@@ -78,7 +78,7 @@
 import { Options, Vue } from 'vue-class-component';
 
 import { SingleDevice, DashboardRoomHeader } from "@/components";
-import { Room } from '@connector';
+import { Room } from 'connector';
 
 @Options({
   components: {
@@ -88,7 +88,7 @@ import { Room } from '@connector';
 })
 export default class Devices extends Vue {
   public rooms: Room[] = [];
-  private interval: number = 0;
+  private interval!: NodeJS.Timeout;
 
   refresh() {
     this.rooms.length = 0;

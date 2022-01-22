@@ -18,8 +18,8 @@
 </template>
 
 <script lang="ts">
-import { Device, Room } from '@connector';
-import { DeviceType } from '@connector/Enums';
+import { Device, Room } from 'connector';
+import { DeviceType } from 'connector/Enums';
 import { defineAsyncComponent } from 'vue';
 import { Options, Vue } from 'vue-class-component';
 
@@ -33,8 +33,8 @@ export default class Devices extends Vue {
   private room?: Room;
   private devices: Device[] = [];
   private deviceTypes: DeviceType[] = [];
-  private interval?: number;
-  private autoGoBackTimeout?: number;
+  private interval!: NodeJS.Timeout;
+  private autoGoBackTimeout!: NodeJS.Timeout;
 
   refresh() {
     this.devices.length = 0;

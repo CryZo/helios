@@ -28,7 +28,7 @@
 </template>
 
 <script lang="ts">
-import { DeviceType } from '@connector/Enums';
+import { DeviceType } from 'connector/Enums';
 import { Options, Vue } from 'vue-class-component';
 
 @Options({
@@ -38,7 +38,7 @@ import { Options, Vue } from 'vue-class-component';
 export default class Room extends Vue {
   private room: {id: string, Name: string, desc: string} = {id: '', Name: '', desc: ''};
   private deviceTypes: DeviceType[] = [];
-  private interval: number = 0;
+  private interval!: NodeJS.Timeout;
 
   refresh() {
     this.deviceTypes.length = 0;

@@ -27,8 +27,8 @@
 </template>
 
 <script lang="ts">
-import { Room } from '@connector';
-import { DeviceType } from '@connector/Enums';
+import { Room } from 'connector';
+import { DeviceType } from 'connector/Enums';
 import { Options, Vue } from 'vue-class-component';
 import { defineAsyncComponent } from 'vue';
 import { Humidity, Temperature } from '@/components/traits';
