@@ -71,7 +71,7 @@ new MQTTControls(mqtt);
  * 2. Copy your dependencies to /node_modules
  */
 try {
-	const automation = require("./Automation");
+	const automation = require("./dist/Automation");
 
 	try {
 		console.info('Automation logic found. Launching module.');
