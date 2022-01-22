@@ -50,7 +50,15 @@ module.exports = {
     pwa: {
         name: process.env.VUE_APP_TITLE,
         themeColor: colors.primary,
-        msTileColor: colors.primary
+        msTileColor: colors.primary,
+        iconPaths: {
+            favicon64: 'img/logos/fav_64.png',
+            favicon32: 'img/logos/fav_32.png',
+            favicon16: 'img/logos/fav_16.png',
+            appleTouchIcon: 'img/logos/logo_152h.png',
+            maskIcon: null,
+            msTileImage: 'img/logos/logo_144h.png'
+        }
     },
 
     // configureWebpack: config => {

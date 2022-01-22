@@ -10,7 +10,7 @@ function render(cb) {
 }
 
 function scale(cb) {
-  [32, 64, 256, 512, 1024].forEach(function (size) {
+  [32, 64, 144, 152, 256, 512, 1024].forEach(function (size) {
     gulp.src('tmp/logo0001.png')
       .pipe(imageResize({ height: size, imageMagick: true }))
       .pipe(rename(function (path) { path.basename = `logo_${size}h`; }))
