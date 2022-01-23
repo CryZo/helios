@@ -68,38 +68,38 @@ module.exports = {
             background_color: colors.primary,
             icons: [
                 {
-                    src: "./img/logos/logo_32h.png",
-                    sizes: "38x32",
+                    src: "./img/logos/logo_32wh.png",
+                    sizes: "32x32",
                     type: "image/png",
                 },
                 {
-                    src: "./img/logos/logo_64h.png",
-                    sizes: "76x64",
+                    src: "./img/logos/logo_64wh.png",
+                    sizes: "64x64",
                     type: "image/png",
                 },
                 {
-                    src: "./img/logos/logo_144h.png",
-                    sizes: "170x144",
+                    src: "./img/logos/logo_144wh.png",
+                    sizes: "144x144",
                     type: "image/png",
                 },
                 {
-                    src: "./img/logos/logo_152h.png",
-                    sizes: "180x152",
+                    src: "./img/logos/logo_152wh.png",
+                    sizes: "152x152",
                     type: "image/png",
                 },
                 {
-                    src: "./img/logos/logo_256h.png",
-                    sizes: "303x256",
+                    src: "./img/logos/logo_256wh.png",
+                    sizes: "256x256",
                     type: "image/png",
                 },
                 {
-                    src: "./img/logos/logo_512h.png",
-                    sizes: "605x512",
+                    src: "./img/logos/logo_512wh.png",
+                    sizes: "512x512",
                     type: "image/png",
                 },
                 {
-                    src: "./img/logos/logo_1024h.png",
-                    sizes: "1211x1024",
+                    src: "./img/logos/logo_1024wh.png",
+                    sizes: "1024x1024",
                     type: "image/png",
                 }
             ],
