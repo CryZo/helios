@@ -68,16 +68,6 @@ module.exports = {
             background_color: colors.primary,
             icons: [
                 {
-                    src: "./img/logos/logo_32wh.png",
-                    sizes: "32x32",
-                    type: "image/png",
-                },
-                {
-                    src: "./img/logos/logo_64wh.png",
-                    sizes: "64x64",
-                    type: "image/png",
-                },
-                {
                     src: "./img/logos/logo_144wh.png",
                     sizes: "144x144",
                     type: "image/png",
