@@ -52,13 +52,58 @@ module.exports = {
         themeColor: colors.primary,
         msTileColor: colors.primary,
         iconPaths: {
-            favicon64: 'img/logos/fav_64.png',
             favicon32: 'img/logos/fav_32.png',
             favicon16: 'img/logos/fav_16.png',
             appleTouchIcon: 'img/logos/logo_152h.png',
             maskIcon: null,
             msTileImage: 'img/logos/logo_144h.png'
-        }
+        },
+
+        manifestOptions: {
+            name: process.env.VUE_APP_TITLE,
+            short_name: process.env.VUE_APP_TITLE,
+            start_url: "./rooms",
+            display: "standalone",
+            theme_color: colors.primary,
+            background_color: colors.primary,
+            icons: [
+                {
+                    src: "./img/logos/logo_32h.png",
+                    sizes: "38x32",
+                    type: "image/png",
+                },
+                {
+                    src: "./img/logos/logo_64h.png",
+                    sizes: "76x64",
+                    type: "image/png",
+                },
+                {
+                    src: "./img/logos/logo_144h.png",
+                    sizes: "170x144",
+                    type: "image/png",
+                },
+                {
+                    src: "./img/logos/logo_152h.png",
+                    sizes: "180x152",
+                    type: "image/png",
+                },
+                {
+                    src: "./img/logos/logo_256h.png",
+                    sizes: "303x256",
+                    type: "image/png",
+                },
+                {
+                    src: "./img/logos/logo_512h.png",
+                    sizes: "605x512",
+                    type: "image/png",
+                },
+                {
+                    src: "./img/logos/logo_1024h.png",
+                    sizes: "1211x1024",
+                    type: "image/png",
+                }
+            ],
+        },
     },
 
     // configureWebpack: config => {
