@@ -29,7 +29,7 @@ export default class TasmotaButton extends Device {
 			if (key.toUpperCase().includes('BUTTON')) {
 				this.emit('input', {
 					inputNumber: parseInt(key.match(/([0-9]+)/)[0]),
-					inputStatus: data[key]
+					inputStatus: data[key].Action
 				});
 			}
 		});
