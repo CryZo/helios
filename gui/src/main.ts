@@ -12,11 +12,13 @@ import * as mdijs from '@mdi/js'
 import { MQTTConnection } from "connector/connection";
 import { RestParser } from "connector/";
 
-window.backendConnection = new MQTTConnection('ws://10.0.3.11:9001');
-let rp = new RestParser(window.backendConnection);
-setInterval(() => {
-    window.rooms = rp.ParseModel(window.backendConnection.data);
-}, 500);
+if (process.env.VUE_APP_MQTT_URL) {
+    window.backendConnection = new MQTTConnection(process.env.VUE_APP_MQTT_URL);
+    let rp = new RestParser(window.backendConnection);
+    setInterval(() => {
+        window.rooms = rp.ParseModel(window.backendConnection.data);
+    }, 500);
+}
 
 createApp(App).use(i18n)
     .use(router)

@@ -35,6 +35,13 @@ export default class MQTTHandler {
 			if (this.subscribed[topic])
 				this.subscribed[topic](message, topic);
 		});
+
+		this.Client.on('error', (err) => {
+			setTimeout(() => {
+				console.log(`Wasn't able to connect to ${this.url}: ${err}`);
+				this.Client.reconnect();
+			}, 10000);
+		});
 	}
 
 	SendCommand(topic: string, payload: string): void {

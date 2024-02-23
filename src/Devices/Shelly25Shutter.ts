@@ -2,7 +2,7 @@ import { Device, MQTTHandler } from "../";
 import { IOpenClose, ITemperature, IPower, IEnergy } from "../interfaces/Traits";
 import { BlindStatus, DeviceType, Trait } from "../Enums";
 
-export default class Shelly25Shutter  extends Device implements IOpenClose, ITemperature, IPower, IEnergy {
+export default class Shelly25Shutter extends Device implements IOpenClose, ITemperature, IPower, IEnergy {
 	Name: string;
 	_id: string;
 	Type: DeviceType = DeviceType.Blinds;

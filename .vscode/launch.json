@@ -16,6 +16,13 @@
 			"outFiles": [
 				"${workspaceFolder}/dist/**/*.js"
 			]
+		},
+		{
+			"type": "node",
+			"request": "attach",
+			"name": "Docker: Attach to Node",
+			"preLaunchTask": "Run docker compose in debug config",
+			"remoteRoot": "/opt/app"
 		}
 	]
 }

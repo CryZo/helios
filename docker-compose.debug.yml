@@ -1,0 +1,29 @@
+version: "3.7"
+
+services:
+  helios:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - VUE_APP_MQTT_URL=ws://127.0.0.1:9001
+    ports:
+      - 8081:80
+      - 9229:9229
+    volumes:
+      - ./config.json:/opt/app/config.json
+    environment:
+      OPENWEATHER_API_KEY: 8ca208f8dfca00791afc176831da1993
+    depends_on:
+      - mqtt
+    links:
+      - "mqtt:mqtt"
+    command: node --inspect=0.0.0.0:9229 ./dist/helios.js
+
+  mqtt:
+    image: eclipse-mosquitto
+    ports:
+      - 1883:1883
+      - 9001:9001
+    volumes:
+      - ./mosquitto.conf:/mosquitto/config/mosquitto.conf
