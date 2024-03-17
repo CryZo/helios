@@ -15,6 +15,7 @@
 
         <!-- Large controls -->
         <brightness class="mt-4" v-if="CheckTrait('Brightness', device)" :device="device"></brightness>
+        <color-temperature class="mt-4" v-if="CheckTrait('ColorTemperature', device)" :device="device"></color-temperature>
 
         <div v-if="CheckTrait('OpenClose', device) || CheckTrait('Position', device)" class="flex flex-col sm:flex-row mt-4 w-full">
           <open-close class="w-full" v-if="CheckTrait('OpenClose', device)" :class="{'mr-2': CheckTrait('Position', device)}" :device="device"></open-close>
@@ -40,7 +41,7 @@ import { Device } from 'connector';
 import { Trait } from 'connector/Enums';
 import { Options, Vue } from 'vue-class-component';
 
-import { Brightness, Humidity, OnOff, OpenClose, Position, RGB, Temperature, TemperatureSetting } from '@/components/traits';
+import { Brightness, Humidity, OnOff, OpenClose, Position, RGB, Temperature, TemperatureSetting, ColorTemperature } from '@/components/traits';
 
 @Options({
   components: {
@@ -49,6 +50,7 @@ import { Brightness, Humidity, OnOff, OpenClose, Position, RGB, Temperature, Tem
 			RGB,
 			OpenClose,
 			Position,
+      ColorTemperature,
 
 			TemperatureSetting,
 			Temperature,
@@ -64,4 +66,3 @@ export default class SingleDevice extends Vue {
   }
 }
 </script>
- 

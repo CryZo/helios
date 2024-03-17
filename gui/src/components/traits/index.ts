@@ -6,3 +6,4 @@ export {default as Position} from './Position.vue';
 export {default as RGB} from './RGB.vue';
 export {default as Temperature} from './Temperature.vue';
 export {default as TemperatureSetting} from './TemperatureSetting.vue';
+export {default as ColorTemperature/*  */} from './ColorTemperature.vue';

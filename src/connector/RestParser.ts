@@ -19,7 +19,7 @@ export default class RestParser {
             room._id = r.id;
             room.Name = r.Name;
             room.Floor = r.Floor
-            
+
             r.Devices.forEach(d => {
                 let dev = new Device(this.connection);
 
@@ -27,7 +27,7 @@ export default class RestParser {
                 dev.Name = d.Name;
                 dev.Type = d.Type;
                 dev.Traits = d.Traits;
-                
+
                 dev.Status = d.Status;
                 if (d.Color) dev.Color = Color.Parse(d.Color);
                 dev.Brightness = d.Brightness;
@@ -38,6 +38,9 @@ export default class RestParser {
                 dev.Humidity = d.Humidity;
                 dev.Power = d.Power;
                 dev.Energy = d.Energy;
+                dev.ColorTemperature = d.ColorTemperature;
+                dev.MinColorTemperature = d.MinColorTemperature;
+                dev.MaxColorTemperature = d.MaxColorTemperature;
 
                 room.Devices.push(dev);
             });

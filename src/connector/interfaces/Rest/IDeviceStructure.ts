@@ -16,4 +16,8 @@ export default interface IDeviceStructure {
     Humidity?: number;
     Power?: number;
     Energy?: number;
+
+	ColorTemperature?: number;
+	MinColorTemperature?: number;
+	MaxColorTemperature?: number;
 }

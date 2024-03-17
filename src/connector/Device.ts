@@ -24,6 +24,9 @@ export default class Device {
     TargetTemperature?: number;
     AutomationTemperature?: number;
     Vibration?: boolean;
+	ColorTemperature?: number;
+	MinColorTemperature?: number;
+	MaxColorTemperature?: number;
 
     connection!: IBackendConnection
 
@@ -170,5 +173,10 @@ export default class Device {
 
         this.TargetTemperature -= amount;
         this.SetTemperature();
+    }
+
+	SetColorTemperature(ColorTemperature: number): void {
+        this.ColorTemperature = ColorTemperature;
+        this.connection.sendDeviceCommand(this._id, ColorTemperature.toString());
     }
 }

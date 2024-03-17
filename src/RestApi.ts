@@ -4,7 +4,7 @@ import path from 'path';
 import { Device, DeviceController, Room, RoomCollection } from "./";
 import { DeviceType, Trait } from "./Enums";
 import { IDeviceStructure } from "./interfaces/Rest";
-import { IOnOff, IRGB, IOpenClose, IPosition, IBrightness, ITemperatureSetting, ITemperature, IHumidity, IPower, IEnergy } from "./interfaces/Traits";
+import { IOnOff, IRGB, IOpenClose, IPosition, IBrightness, ITemperatureSetting, ITemperature, IHumidity, IPower, IEnergy, IColorTemperature } from "./interfaces/Traits";
 
 //TODO Refactor me!
 //Note: This file also serves static content.
@@ -13,7 +13,7 @@ export default class RestApi {
 	model: RoomCollection;
 	app: express.Express;
 	server: any;
-	
+
 
 	constructor(model: RoomCollection) {
 		this.model = model;
@@ -105,7 +105,7 @@ export default class RestApi {
 				let castedDev = curDev as IRGB;
 				dev.Color = castedDev.GetColor().GetHexColor();
 			}
-			
+
 			if (curDev.Traits.includes(Trait.Brightness))
 			{
 				let castedDev = curDev as IBrightness;
@@ -152,6 +152,14 @@ export default class RestApi {
 			{
 				let castedDev = curDev as IEnergy;
 				dev.Energy = castedDev.Energy;
+			}
+
+			if (curDev.Traits.includes(Trait.ColorTemperature))
+			{
+				const castedDev = curDev as IColorTemperature;
+				dev.ColorTemperature = castedDev.ColorTemperature;
+				dev.MinColorTemperature = castedDev.MinColorTemperature;
+				dev.MaxColorTemperature = castedDev.MaxColorTemperature;
 			}
 
 			ret.push(dev);

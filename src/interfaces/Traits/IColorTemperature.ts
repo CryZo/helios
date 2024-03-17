@@ -5,8 +5,5 @@ export default interface IColorTemperature extends Device {
 	MinColorTemperature: number;
 	MaxColorTemperature: number;
 
-	Lighten(): void;
-	Darken(): void;
-
 	SetColorTemperature(ColorTemperature: number): void;
 }

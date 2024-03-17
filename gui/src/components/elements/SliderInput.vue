@@ -1,15 +1,10 @@
 <template>
-    <input :value="value" type="range" />
+    <input type="range" />
 </template>
 
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
 
-@Options({
-  props: {
-    value: Number
-  },
-})
 export default class SliderInput extends Vue {
 }
 </script>

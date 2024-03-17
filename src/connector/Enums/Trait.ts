@@ -1,5 +1,6 @@
 export enum Trait {
     Brightness = 'Brightness',
+    ColorTemperature = 'ColorTemperature',
     RGB = 'RGB',
     OnOff = 'OnOff',
     OpenClose = 'OpenClose',
