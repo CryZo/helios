@@ -1,5 +1,5 @@
 import { Color, Device, MQTTHandler } from "./";
-import { ChaserHeater, FireTree, HomematicShutter, HomematicThermometer, HomematicToggle, RestToggle, Shelly1, Shelly1l, Shelly25Shutter, ShellyDW2, ShellyRGBW2Color, ShellyRGBW2ColorAndWhite, ShellyRGBW2White, TasmotaRGB, TasmotaSingleRelais, TasmotaButton } from "./Devices";
+import { ChaserHeater, FireTree, HomematicShutter, HomematicThermometer, HomematicToggle, RestToggle, Shelly1, Shelly1l, Shelly25Shutter, ShellyDW2, ShellyRGBW2Color, ShellyRGBW2ColorAndWhite, ShellyRGBW2White, TasmotaRGB, TasmotaSingleRelais, TasmotaButton, TasmotaCwWw } from "./Devices";
 import { IOnOff, IRGB, IBrightness, IOpenClose, IPosition, ITemperatureSetting } from "./interfaces/Traits/";
 import { Trait } from "./Enums";
 import DenonAvr from "./Devices/DenonAvr";
@@ -47,6 +47,8 @@ export default class DeviceController {
 				return new DenonAvr(devName, id);
 			case 'TasmotaButton':
 				return new TasmotaButton(devName, id, this.mqtt);
+			case 'TasmotaCwWw':
+				return new TasmotaCwWw(devName, id, this.mqtt);
 
 			default:
 				throw `Device class "${className}" not found!`;

@@ -1,5 +1,6 @@
 export {default as IBattery} from './IBattery';
 export {default as IBrightness} from './IBrightness';
+export {default as IColorTemperature} from './IColorTemperature';
 export {default as IEnergy} from './IEnergy';
 export {default as IHumidity} from './IHumidity';
 export {default as IIllumination} from './IIllumination';

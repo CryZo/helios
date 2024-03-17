@@ -15,3 +15,4 @@ export {default as ShellyRGBW2White} from './ShellyRGBW2White';
 export {default as TasmotaRGB} from './TasmotaRGB';
 export {default as TasmotaSingleRelais} from './TasmotaSingleRelais';
 export {default as TasmotaButton} from './TasmotaButton';
+export {default as TasmotaCwWw} from './TasmotaCwWw';
