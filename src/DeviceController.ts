@@ -1,6 +1,6 @@
 import { Color, Device, MQTTHandler } from "./";
 import { ChaserHeater, FireTree, HomematicShutter, HomematicThermometer, HomematicToggle, RestToggle, Shelly1, Shelly1l, Shelly25Shutter, ShellyDW2, ShellyRGBW2Color, ShellyRGBW2ColorAndWhite, ShellyRGBW2White, TasmotaRGB, TasmotaSingleRelais, TasmotaButton, TasmotaCwWw } from "./Devices";
-import { IOnOff, IRGB, IBrightness, IOpenClose, IPosition, ITemperatureSetting } from "./interfaces/Traits/";
+import { IOnOff, IRGB, IBrightness, IOpenClose, IPosition, ITemperatureSetting, IColorTemperature } from "./interfaces/Traits/";
 import { Trait } from "./Enums";
 import DenonAvr from "./Devices/DenonAvr";
 
@@ -56,8 +56,7 @@ export default class DeviceController {
 	}
 
 	static HandleCommand(dev: Device, cmd: string) {
-		if(dev.Traits.includes(Trait.OnOff))
-		{
+		if (dev.Traits.includes(Trait.OnOff)) {
 			let castedDev = dev as IOnOff;
 
 			if (cmd == 'on') castedDev.TurnOn();
@@ -65,8 +64,7 @@ export default class DeviceController {
 			else if (cmd == 'toggle') castedDev.Toggle();
 		}
 
-		if(dev.Traits.includes(Trait.RGB))
-		{
+		if (dev.Traits.includes(Trait.RGB)) {
 			let castedDev = dev as IRGB;
 
 			if (cmd == 'lightenColor') castedDev.LightenColor();
@@ -75,8 +73,7 @@ export default class DeviceController {
 			else if (cmd.toString().length == 6) castedDev.SetColor(Color.Parse(cmd.toString()));
 		}
 
-		if(dev.Traits.includes(Trait.Brightness))
-		{
+		if (dev.Traits.includes(Trait.Brightness)) {
 			let castedDev = dev as IBrightness;
 
 			if (cmd == 'lighten') castedDev.Lighten();
@@ -86,8 +83,7 @@ export default class DeviceController {
 				castedDev.SetBrightness(parseInt(cmd));
 		}
 
-		if(dev.Traits.includes(Trait.OpenClose))
-		{
+		if (dev.Traits.includes(Trait.OpenClose)) {
 			let castedDev = dev as IOpenClose;
 
 			//TODO Rename me
@@ -98,20 +94,25 @@ export default class DeviceController {
 			else if (cmd == 'stop') castedDev.Stop();
 		}
 
-		if(dev.Traits.includes(Trait.Position))
-		{
+		if (dev.Traits.includes(Trait.Position)) {
 			let castedDev = dev as IPosition;
 
 			if (parseInt(cmd) >= 0 && parseInt(cmd) <= 100)
 				castedDev.SetPosition(parseInt(cmd));
 		}
 
-		if(dev.Traits.includes(Trait.TemperatureSetting))
-		{
+		if (dev.Traits.includes(Trait.TemperatureSetting)) {
 			let castedDev = dev as ITemperatureSetting;
 
-			if (parseFloat(cmd) >= 0 && parseInt(cmd) <= 100)
+			if (parseFloat(cmd) >= 0 && parseFloat(cmd) <= 100)
 				castedDev.SetTemperature(parseFloat(cmd));
+		}
+
+		if (dev.Traits.includes(Trait.ColorTemperature)) {
+			let castedDev = dev as IColorTemperature;
+
+			if (parseInt(cmd) >= castedDev.MinColorTemperature && parseInt(cmd) <= castedDev.MaxColorTemperature)
+				castedDev.SetColorTemperature(parseInt(cmd));
 		}
 	}
 }
